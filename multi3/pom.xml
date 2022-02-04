@@ -8,7 +8,7 @@
     </parent>
 
     <artifactId>multi3</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Multi 3</name>
 
     <dependencies>
