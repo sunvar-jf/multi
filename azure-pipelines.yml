@@ -9,6 +9,10 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- name: MAVEN_OPTS
+  value: '-Xms1024m -Xmx4096m -client -XX:MaxPermSize=500m  -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xverify:none'
+
 steps:
 - task: Maven@3
   inputs:
