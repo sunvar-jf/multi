@@ -32,6 +32,16 @@ steps:
       
       'env | sort'
 
+- task: ArtifactoryMaven@2
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'install'
+    artifactoryResolverService: 'testazure-sun-connection'
+    targetResolveReleaseRepo: 'sun-mvn-opts-libs-release'
+    targetResolveSnapshotRepo: 'sun-mvn-opts-libs-snapshot'
+    artifactoryDeployService: 'testazure-sun-connection'
+    targetDeployReleaseRepo: 'sun-mvn-opts-libs-release-local'
+    targetDeploySnapshotRepo: 'sun-mvn-opts-libs-snapshot-local'
 - task: ArtifactoryPublishBuildInfo@1
   inputs:
     artifactoryService: 'testazure-sun-connection'
